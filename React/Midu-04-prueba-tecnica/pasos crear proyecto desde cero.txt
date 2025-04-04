@@ -1,0 +1,28 @@
+npm create vite@latest
+
+npm install @vitejs/plugin-react -E
+
+EN EL PACKAGE JSON NO ESTA REACT ! por eso:
+npm install react react-dom -E
+
+crear 
+vite.config.js
+
+aca el texto
+
+import  {defineConfig} from 'vite'
+import react from '@vitejs/plugin-react'
+
+export default defineConfig({
+  plugins: [react()],
+})
+
+
+NO OLVIDAR EL LINTER!
+npm install standard -D
+
+Configurarlo!  
+
+"eslintConfig": {
+    "extends": "./node_modules/standard/eslintrc.json"
+  }
