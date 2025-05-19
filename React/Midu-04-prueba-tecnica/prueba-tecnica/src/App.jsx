@@ -10,8 +10,12 @@ const CAT_ENDPOINT_IMAGE_URL = `https://cataas.com/cat/says/${threeFirstWords}?s
 const CAT_PREFIX_IMAGE_URL = 'https://cataas.com'
 
 export function App () {
+<<<<<<< HEAD
   const [fact, setFact] = useState()
   const [imageUrl, setImageUrl] = useState()
+=======
+  const [fact, setFact] = useState('cargando...')
+>>>>>>> fb363181cd04683a7fa4141ec20f721ae97eb605
 
   useEffect(() => {
     fetch(CAT_ENDPOINT_RANDOM_FACT)
@@ -19,6 +23,7 @@ export function App () {
       .then((data) => {
         const { fact } = data
         setFact(fact)
+<<<<<<< HEAD
 
         const threeFirstWords = fact.split(' ', 3).join()
         
@@ -29,6 +34,11 @@ export function App () {
             setImageUrl(url)
           })
       })
+=======
+      }
+
+      )
+>>>>>>> fb363181cd04683a7fa4141ec20f721ae97eb605
   }, [])
 
   return (
