@@ -9,6 +9,7 @@ const CAT_PREFIX_IMAGE_URL = "https://cataas.com";
 export function App() {
   const [fact, setFact] = useState();
   const [imageUrl, setImageUrl] = useState();
+  const [factError, setFactError] = useState();
 
   useEffect(() => {
     fetch(CAT_ENDPOINT_RANDOM_FACT)
@@ -23,7 +24,7 @@ export function App() {
     if (!fact) return;
 
     const threeFirstWords = fact.split(" ").slice(0, 3).join(" ");
-    
+
     fetch(
       `https://cataas.com/cat/says/${threeFirstWords}?size=50&color=red&json=true`
     )
