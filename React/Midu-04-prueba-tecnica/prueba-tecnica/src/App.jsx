@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import { getRandomFact } from "./services/facts";
 
-// Endpoint de la API de gatos
-const CAT_ENDPOINT_RANDOM_FACT = "https://catfact.ninja/fact";
 // Prefijo de la API de gatos
 const CAT_PREFIX_IMAGE_URL = "https://cataas.com";
 
@@ -12,13 +11,8 @@ export function App() {
   const [factError, setFactError] = useState();
 
   useEffect(() => {
-    fetch(CAT_ENDPOINT_RANDOM_FACT)
-      .then((res) => res.json())
-      .then((data) => {
-        const { fact } = data;
-        setFact(fact);
-      });
-  }, []);
+    getRandomFact().then(newFact => setFact(newFact));
+    }, []);
 
   useEffect(() => {
     if (!fact) return;
@@ -35,10 +29,18 @@ export function App() {
       });
   }, [fact]);
 
+  const handleClick = async () => {
+    const newFact = await getRandomFact()
+    setFact(newFact);
+    }
+
+
   return (
     <main>
       <h1>App de gatitos</h1>
       <section>
+
+        <button onClick={handleClick}>Nuevo hecho</button>
         {fact && <p>{fact}</p>}
         {imageUrl && (
           <img
