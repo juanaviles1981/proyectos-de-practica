@@ -15,10 +15,16 @@ export function App () {
     <main>
       <h1>App de gatitos</h1>
 
-      <button onClick={handleClick}>Get new fact</button>
+      <button onClick={handleClick}>Obtener nuevo hecho</button>
 
-      {fact && <p>{fact}</p>}
-      {imageUrl && <img src={imageUrl} alt={`Image extracted using the first three words for ${fact}`} />}
+      <div className="hecho">
+        {fact && <p>{fact}</p>}
+      </div>
+      
+      <div className="imagen">
+        {imageUrl && <img src={imageUrl} alt={`Image extracted using the first three words for ${fact}`} />}
+      </div>
+      
     
     </main>
   )
