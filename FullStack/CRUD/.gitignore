@@ -1,6 +1,0 @@
-#Variables de entorno
-.env 
-#Dependencias de Node.js
-node_modules    
-#Carpeta de compilación
-dist
