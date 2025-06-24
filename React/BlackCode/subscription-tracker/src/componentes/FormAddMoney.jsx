@@ -1,18 +1,21 @@
 import { useState } from "react";
 
-const FormAddMoney = ( {setCount, setIsValid }) =>{
+const FormAddMoney = ( {setCount }) =>{
     
     const [input, setInput] = useState("")
     const [error, setError] = useState(false)
+    
     const handleForm = e => {
         e.preventDefault();
+        
         if(input === "" || Number(input)<0) {
             setError(true)
             return
         }
+
         setError(false)
         setCount(Number(input))
-        setIsValid(true)
+    
     }
 
     return(
