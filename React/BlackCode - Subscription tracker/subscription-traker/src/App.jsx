@@ -8,13 +8,13 @@ function App() {
   const [count, setCount] = useState(0)
   const [isValid, setIsValid] = useState(false)
   
-  const component = isvalid ? 
+  const component = isValid 
+                    ? <MainControl count={count} />
+                    : <FormAddMoney setCount={setCount} setIsValid={setIsValid} />
   return (
     <div className='App'>
       <Header />
-      <FormAddMoney setCount={setCount} setIsValid={setIsValid}/>    
-      <MainControl count={count}/>
-
+      {component} 
     </div>
     
   )

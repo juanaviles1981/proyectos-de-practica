@@ -4,6 +4,7 @@ const FormAddMoney = ( {setCount, setIsValid }) =>{
     
     const [input, setInput] = useState("")
     const [error, setError] = useState(false)
+    
     const handleForm = e => {
         e.preventDefault();
         if(input === "" || Number(input)<0) {
