@@ -1,5 +1,5 @@
 import SimpleItem from "./SingleItem"
-export default function DisplayItems({ subs }) {
+export default function DisplayItems({ subs, eliminarItem, editItem }) {
   return (
    <>
     <h2>Suscripciones</h2>
@@ -9,7 +9,9 @@ export default function DisplayItems({ subs }) {
             key={item.id}
             id={item.id} 
             price={item.price} 
-            type={item.type} />
+            type={item.type} 
+            eliminarItem={eliminarItem}
+            editItem={editItem}/>
         ))
     }
 

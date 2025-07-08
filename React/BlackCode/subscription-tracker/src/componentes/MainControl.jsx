@@ -8,6 +8,20 @@ const MainControl = ({ count }) => {
   const [type, setType] = useState(""); //1 tipo de sub
   const [price, setPrice] = useState(""); //2 precio de sub
 
+  const eliminarItem = id => {
+    const newList = subs.filter(item => item.id !== id);
+    setSubs(newList); //Elimina el item
+  }
+
+  const editItem = id => {
+    subs.map(item => {
+      if(item.id === id){
+        setType(item.type)
+        setPrice(item.price)
+      }
+    })
+  }
+
   return (
     <>
     <div className="main-form">
@@ -21,7 +35,10 @@ const MainControl = ({ count }) => {
         subs={subs}
       />
     </div>
-    <DisplayItems subs={subs} />
+    <DisplayItems 
+    subs={subs} 
+    eliminarItem={eliminarItem} 
+    editItem={editItem}/>
     </>
     
   );
