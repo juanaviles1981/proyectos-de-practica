@@ -9,15 +9,17 @@ function FormAddSubs({ type, setType, price, setPrice, subs, setSubs }) {
       return;
     }
     setError(false);
+
     const data = {
       type: type,
       price: price,
-      id: Date.now(),
+      id: Date.now()
     };
 
     setSubs([...subs, data]);
     setType("");
     setPrice("");
+ 
   };
 
   return (
