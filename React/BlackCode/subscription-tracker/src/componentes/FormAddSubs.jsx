@@ -1,6 +1,18 @@
 import { useState } from "react";
-function FormAddSubs({ type, setType, price, setPrice, subs, setSubs }) {
+function FormAddSubs({
+  type,
+  setType,
+  price,
+  setPrice,
+  subs,
+  setSubs,
+  editID,
+  setEditId,
+  spent, 
+  count
+}) {
   const [error, setError] = useState(false);
+  const [errorMoney, setErrorMoney] = useState(false)
 
   const handleSubs = (e) => {
     e.preventDefault();
@@ -8,18 +20,38 @@ function FormAddSubs({ type, setType, price, setPrice, subs, setSubs }) {
       setError(true);
       return;
     }
+
+    if (count - spent < Number(price)){
+      setErrorMoney(true)
+      return
+    }
+
     setError(false);
+    setErrorMoney(false)
+    
 
-    const data = {
-      type: type,
-      price: price,
-      id: Date.now()
-    };
+    if (editID !== "") {
+      setEditId("")
+      const newSubs = subs.map((item) => {
+        if (item.id === editID) {
+          item.type = type;
+          item.price = price;
+        }
+        return item;
+      });
+      setSubs(newSubs);
+    } else {
+      const data = {
+        type: type,
+        price: price,
+        id: Date.now(),
+      };
 
-    setSubs([...subs, data]);
+      setSubs([...subs, data]);
+    }
+
     setType("");
     setPrice("");
- 
   };
 
   return (
@@ -31,7 +63,7 @@ function FormAddSubs({ type, setType, price, setPrice, subs, setSubs }) {
           <option value=""> -- Elegir --</option>
           <option value="netflix">Netflix</option>
           <option value="disneyPlus">Disney Plus</option>
-          <option value="hnoMax">HBO Max</option>
+          <option value="hboMax">HBO Max</option>
           <option value="starPlus">Star Plus</option>
           <option value="primeVideo">Prime Video</option>
           <option value="spotify">Spotify</option>
@@ -44,9 +76,14 @@ function FormAddSubs({ type, setType, price, setPrice, subs, setSubs }) {
           onChange={(e) => setPrice(e.target.value)}
           value={price}
         />
-        <input type="submit" value="Agregar" />
+        {editID !== "" ? (
+          <input type="submit" value="Guardar" />
+        ) : (
+          <input type="submit" value="Agregar" />
+        )}
       </form>
       {error ? <p className="error">Campos inválidos</p> : null}
+      {errorMoney ? <p className="error">No tienes presupuestp</p>: null}
     </div>
   );
 }
