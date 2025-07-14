@@ -1,7 +1,4 @@
 import { moneyFormat } from "./helpers";
-<<<<<<< HEAD
-export default function SingleItem({ price, type, id, eliminarItem, editItem }) {
-=======
 export default function SingleItem({
   price,
   type,
@@ -9,7 +6,6 @@ export default function SingleItem({
   eliminarItem,
   editItem,
 }) {
->>>>>>> 47551efdf6dc82cbf12956e6155ae63050c8415a
   const imageSrc = `/images/${type}.png`;
 
   const handleDelete = (e) => {
@@ -20,18 +16,11 @@ export default function SingleItem({
     }
   };
 
-<<<<<<< HEAD
-  const handleEdit = e =>{
-    e.preventDefault();
-    editItem(id);
-  }
-=======
   const handleEdit = (e) => {
     e.preventDefault();
     editItem(id);
   };
 
->>>>>>> 47551efdf6dc82cbf12956e6155ae63050c8415a
   return (
     <div className="single-item">
       <img src={imageSrc} alt="Services" />

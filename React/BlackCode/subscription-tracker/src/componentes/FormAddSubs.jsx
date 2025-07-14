@@ -6,15 +6,10 @@ function FormAddSubs({
   setPrice,
   subs,
   setSubs,
-<<<<<<< HEAD
-  editId,
-  setEditId,
-=======
   editID,
   setEditId,
   spent, 
   count
->>>>>>> 47551efdf6dc82cbf12956e6155ae63050c8415a
 }) {
   const [error, setError] = useState(false);
   const [errorMoney, setErrorMoney] = useState(false)
@@ -35,17 +30,10 @@ function FormAddSubs({
     setErrorMoney(false)
     
 
-<<<<<<< HEAD
-    if (editId !== "") {
-      setEditId("");
-      const newSubs = subs.map((item) => {
-        if (item.id === editId) {
-=======
     if (editID !== "") {
       setEditId("")
       const newSubs = subs.map((item) => {
         if (item.id === editID) {
->>>>>>> 47551efdf6dc82cbf12956e6155ae63050c8415a
           item.type = type;
           item.price = price;
         }
@@ -58,10 +46,6 @@ function FormAddSubs({
         price: price,
         id: Date.now(),
       };
-<<<<<<< HEAD
-=======
-
->>>>>>> 47551efdf6dc82cbf12956e6155ae63050c8415a
       setSubs([...subs, data]);
     }
 
@@ -91,11 +75,7 @@ function FormAddSubs({
           onChange={(e) => setPrice(e.target.value)}
           value={price}
         />
-<<<<<<< HEAD
-        {editId !== "" ? (
-=======
         {editID !== "" ? (
->>>>>>> 47551efdf6dc82cbf12956e6155ae63050c8415a
           <input type="submit" value="Guardar" />
         ) : (
           <input type="submit" value="Agregar" />
