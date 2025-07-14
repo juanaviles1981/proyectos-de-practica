@@ -11,7 +11,8 @@ export default function DisplayItems({ subs, eliminarItem, editItem }) {
             price={item.price} 
             type={item.type} 
             eliminarItem={eliminarItem}
-            editItem={editItem}/>
+            editItem={editItem}
+          />
         ))
     }
 

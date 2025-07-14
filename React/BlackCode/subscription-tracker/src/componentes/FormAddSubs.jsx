@@ -1,5 +1,14 @@
 import { useState } from "react";
-function FormAddSubs({ type, setType, price, setPrice, subs, setSubs }) {
+function FormAddSubs({
+  type,
+  setType,
+  price,
+  setPrice,
+  subs,
+  setSubs,
+  editId,
+  setEditId,
+}) {
   const [error, setError] = useState(false);
 
   const handleSubs = (e) => {
@@ -10,16 +19,27 @@ function FormAddSubs({ type, setType, price, setPrice, subs, setSubs }) {
     }
     setError(false);
 
-    const data = {
-      type: type,
-      price: price,
-      id: Date.now()
-    };
+    if (editId !== "") {
+      setEditId("");
+      const newSubs = subs.map((item) => {
+        if (item.id === editId) {
+          item.type = type;
+          item.price = price;
+        }
+        return item;
+      });
+      setSubs(newSubs);
+    } else {
+      const data = {
+        type: type,
+        price: price,
+        id: Date.now(),
+      };
+      setSubs([...subs, data]);
+    }
 
-    setSubs([...subs, data]);
     setType("");
     setPrice("");
- 
   };
 
   return (
@@ -44,7 +64,11 @@ function FormAddSubs({ type, setType, price, setPrice, subs, setSubs }) {
           onChange={(e) => setPrice(e.target.value)}
           value={price}
         />
-        <input type="submit" value="Agregar" />
+        {editId !== "" ? (
+          <input type="submit" value="Guardar" />
+        ) : (
+          <input type="submit" value="Agregar" />
+        )}
       </form>
       {error ? <p className="error">Campos inválidos</p> : null}
     </div>
