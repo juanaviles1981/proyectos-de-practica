@@ -13,26 +13,6 @@ Aplicación web para gestionar reparaciones de dispositivos electrónicos (celul
 - Modo oscuro para una mejor experiencia visual
 
 ---
-
-## Estructura del proyecto
-
-/src
-/components
-Hero.jsx
-Navbar.jsx
-ReparacionesForm.jsx
-ReparacionesInforme.jsx
-ReparacionesCard.jsx
-/styles
-ReparacionesForm.css
-ReparacionesInforme.css
-ReparacionesCard.css
-Navbar.css
-App.jsx
-main.jsx
-
----
-
 ## Funcionalidades principales
 
 - Registro de reparaciones con formulario intuitivo y validación básica.
