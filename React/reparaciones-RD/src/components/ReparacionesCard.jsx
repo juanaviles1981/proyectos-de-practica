@@ -1,10 +1,5 @@
-import "../styles/ReparacionesCard.css"
-import {
-  FaMobileAlt,
-  FaLaptop,
-  FaTabletAlt,
-  FaDesktop,
-} from "react-icons/fa";
+import "../styles/ReparacionesCard.css";
+import { FaMobileAlt, FaLaptop, FaTabletAlt, FaDesktop } from "react-icons/fa";
 
 export default function ReparacionCard({
   reparacion,

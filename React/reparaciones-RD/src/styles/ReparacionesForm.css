@@ -1,5 +1,3 @@
-/* ReparacionesForm.css */
-
 .reparaciones-contenedor {
   min-height: 100vh;
   background-color: #f8fafc;
@@ -223,15 +221,15 @@ div[style*="textAlign: right"] .boton:hover {
   .reparaciones-contenedor {
     padding: 1rem;
   }
-  
+
   .titulo {
     font-size: 2.25rem;
   }
-  
+
   .reparaciones-formulario {
     padding: 1.5rem;
   }
-  
+
   .form-input,
   .form-select,
   .form-textarea {
@@ -239,25 +237,25 @@ div[style*="textAlign: right"] .boton:hover {
   }
 }
 
-
 * {
   box-sizing: border-box;
 }
 
 .reparaciones-contenedor * {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .label-custom {
-  font-weight: 700;         
-  font-size: 0.85rem;         
-  display: block;            
-  margin-bottom: 0.25rem;     
-  color: #1e293b;            
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: block;
+  margin-bottom: 0.25rem;
+  color: #1e293b;
 }
 
 .modo-oscuro .label-custom {
-  color: #cbd5e1;             
+  color: #cbd5e1;
 }
 
 .mensaje-exito {

@@ -1,5 +1,3 @@
-
-
 import "../styles/Navbar.css";
 import { VISTAS } from "../constants/vistas"
 export default function Navbar({ setVista, modoOscuro, setModoOscuro }) {

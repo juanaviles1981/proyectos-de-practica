@@ -5,7 +5,7 @@ import "../styles/ReparacionesInforme.css";
 export default function ReparacionesInforme({
   reparaciones,
   setReparaciones,
-  modoOscuro, 
+  modoOscuro,
 }) {
   const [filtroEstado, setFiltroEstado] = useState("");
   const [filtroImportancia, setFiltroImportancia] = useState("");
@@ -70,9 +70,7 @@ export default function ReparacionesInforme({
           />
         ))}
 
-        {filtradas.length === 0 && (
-          <p>No hay reparaciones con esos filtros.</p>
-        )}
+        {filtradas.length === 0 && <p>No hay reparaciones con esos filtros.</p>}
       </div>
     </div>
   );
