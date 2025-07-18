@@ -1,6 +1,7 @@
 import './App.css'
 import { useCatImage } from './hooks/useCatImage.js'
 import { useCatFact } from './hooks/useCatFact.js'
+import Fetch from './Fetch.jsx'
 
 
 export function App () {
@@ -13,7 +14,7 @@ export function App () {
 
   return (
     <main>
-      <h1>App de gatitos</h1>
+     <h1>App de gatitos</h1>
 
       <button onClick={handleClick}>Obtener nuevo hecho</button>
 
@@ -26,6 +27,7 @@ export function App () {
       </div>
       
     
+    {/* <Fetch /> */}
     </main>
   )
 }

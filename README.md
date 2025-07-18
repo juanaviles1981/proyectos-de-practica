@@ -15,15 +15,6 @@ Proyectos enfocados en la manipulación del DOM y lógica con JavaScript puro.
 
 ---
 
-## 🌐 FullStack
-Proyectos con tecnologías del backend y frontend integradas.
-
-- **CRUD - Faztcode**: CRUD completo con Node.js y MongoDB.
-- **Midudev-API-RastreoIP**: Consumo de API para rastrear direcciones IP.
-- **TODO-node-mongo-excel**: App de tareas con exportación a Excel.
-
----
-
 ## 🎨 HTML - CSS - JS Básico
 Proyectos centrados en estructura y estilos con HTML y CSS.
 
@@ -50,6 +41,7 @@ Proyectos realizados con React y React Hooks.
 - **Midu-02-tic-tac-toe**: Juego de tres en raya con React.
 - **Midu-03-mouse-follower**: Cursor personalizado que sigue el mouse.
 - **Midu-04-prueba-tecnica**: Resolución de prueba técnica con React.
+- **BlackCode-Subscriptions-tracker**: Control de gastos en plataformas digitales
 
 ---
 
@@ -57,3 +49,6 @@ Proyectos realizados con React y React Hooks.
 1. Clona este repositorio:  
    ```bash
    git clone https://github.com/tuusuario/Proyectos-de-practica.git
+
+PD: Los proyectos no son de mi autoráa, pero no fueron clonados y copiados, sino que seguí cada tutorial para aprender
+diferentes enfoques para resolución de problemas, anotando las dudas e investigando para aprender más sobre cada tecnología.
